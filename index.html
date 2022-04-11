@@ -17,6 +17,12 @@
 			$(document).ready(function() {
 				getNewBooks("https://cat.pratt.edu/feeds/newmaterials.xml", "#newbooks");
 			});
+			
+			$(document).ajaxStop(function(){
+			$('#newbooks').lightSlider({
+				pager: false,
+			});
+			});
 		</script>
 	</body>
 </html>
