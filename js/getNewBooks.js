@@ -10,7 +10,7 @@ function getNewBooks(feedURL, container) {
 	    	dataType: 'json',
 	    	data: {
 	    		rss_url: feedURL,
-	    		api_key: 'INSERT KEY HERE',
+	    		api_key: 'API KEY GOES HERE',
 	    		count: 100
 	    	}
 	    }).done(function (response) {
@@ -30,8 +30,9 @@ function getNewBooks(feedURL, container) {
 						  success: handleResponse
 						});
 						function handleResponse( response ) {
+							console.log(response);
 								if (response.totalItems>0){
-								if (response.items[0].volumeInfo.imageLinks.thumbnail != null){
+								if (response.items[0].volumeInfo.imageLinks != null){
 						    var thumb = response.items[0].volumeInfo.imageLinks.thumbnail;
 								var thehtml = '<div class="coverArt"><a href="' + catalogLink + '"><img class="thumbnail" src="' + thumb + '" alt="" />' + bookTitle + '</a></div>'
 						}
@@ -40,11 +41,4 @@ function getNewBooks(feedURL, container) {
 						}
 	      	});
 	    });
-
-			setTimeout(function(){
-				$(container).lightSlider({
-					pager: false,
-				});
-			}, 250);
-
 };
