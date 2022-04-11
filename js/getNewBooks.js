@@ -10,7 +10,7 @@ function getNewBooks(feedURL, container) {
 	    	dataType: 'json',
 	    	data: {
 	    		rss_url: feedURL,
-	    		api_key: '',
+	    		api_key: 'INSERT KEY HERE',
 	    		count: 100
 	    	}
 	    }).done(function (response) {
@@ -24,23 +24,18 @@ function getNewBooks(feedURL, container) {
 	      		var shortTitle = $.trim(bookTitle).substring(0,75) + '...'; // Create a snippet from the title to display over default cover art image when no cover art is available.
 	      		var cover =  value.guid.replace(/[-+()\abcdefghijklmnopqrstuvwxyz. ]/g, '');// Get the cover art image
 	      		var catalogLink = value.link; // Get the catalog link
-	      		var defaultCover = '<img src="https://bendaigle.ohio5.org/dev/newbooks/img/book-icon.png" alt="' + bookTitle + '" />'; // Establish a default cover image to use when no art is avialable.
-						$.ajax({
+	     	$.ajax({
 						  dataType: 'json',
 						  url: 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + cover,
 						  success: handleResponse
 						});
 						function handleResponse( response ) {
-								console.log(response);
 								if (response.totalItems>0){
 								if (response.items[0].volumeInfo.imageLinks.thumbnail != null){
 						    var thumb = response.items[0].volumeInfo.imageLinks.thumbnail;
-								var thehtml = '<div class="coverArt"><a href="' + catalogLink + '"><img class="thumbnail" src="' + thumb + '" alt="' + bookTitle + '" /></a></div>'
+								var thehtml = '<div class="coverArt"><a href="' + catalogLink + '"><img class="thumbnail" src="' + thumb + '" alt="" />' + bookTitle + '</a></div>'
 						}
 					}
-					// else {
-					// 	var thehtml = '<div class="coverArt"><a href="' + catalogLink + '"><img class="thumbnail" src="' + defaultCover + '" alt="' + bookTitle + '" /></a></div>'
-					// }
 					$(container).append(thehtml); // Move the HTML above into the #newbooks div
 						}
 	      	});
