@@ -12,16 +12,17 @@
 
 	<body>
 		<div id="newbooks"></div>
-
 		<script type="text/javascript">
 			$(document).ready(function() {
+				$('#newbooks').hide();
 				getNewBooks("https://cat.pratt.edu/feeds/newmaterials.xml", "#newbooks");
 			});
-			
+
 			$(document).ajaxStop(function(){
 			$('#newbooks').lightSlider({
 				pager: false,
 			});
+			$('#newbooks').show();
 			});
 		</script>
 	</body>
