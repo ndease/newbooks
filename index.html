@@ -11,6 +11,9 @@
 	</head>
 
 	<body>
+		<div style="height:200px;" id="newbooks-loading">
+			<img style="display:block; margin-top:84px;margin-left:auto; margin-right:auto;"src="img/loader.gif">
+		</div>
 		<div id="newbooks"></div>
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -22,6 +25,7 @@
 			$('#newbooks').lightSlider({
 				pager: false,
 			});
+			$('#newbooks-loading').hide();
 			$('#newbooks').show();
 			});
 		</script>
