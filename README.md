@@ -1,10 +1,7 @@
 # newbooks
-A horizontal content slider that reads a Sierra RSS feed and returns book covers that link to their records in the library catalog. The slider itself is based on the [jQuery Lightslider](http://sachinchoolur.github.io/lightslider/) project
+A horizontal content slider that reads a Sierra RSS feed and returns book covers that link to their records in the library catalog. The slider itself is based on the [Accessible Slick](https://accessible360.github.io/) project and [bldaigle's newbooks](https://github.com/bldaigle/newbooks). It uses the Google Books api for book covers
 
-This script will create a horizontal content slider of book covers, based on a Sierra RSS feed. Here's a working example:
-https://library.owu.edu/newbooks
-
-The slider can be embedded into any [webpage](https://github.com/bldaigle/newbooks/wiki/Add-new-books-to-any-web-page), or you could embed it into a [LibGuide](https://github.com/bldaigle/newbooks/wiki/Add-new-books-to-a-LibGuide).
+This script will create a horizontal content slider of book covers, based on a Sierra RSS feed. 
 
 This slider works off of Sierra's RSS feeds. A couple things about Sierra's feeds:
 
