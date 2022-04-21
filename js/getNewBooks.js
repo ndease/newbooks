@@ -34,7 +34,7 @@ function getNewBooks(feedURL, container) {
 								if (response.totalItems>0){
 								if (response.items[0].volumeInfo.imageLinks != null){
 						    var thumb = response.items[0].volumeInfo.imageLinks.thumbnail;
-								var thehtml = '<div class="coverArt"><a href="' + catalogLink + '"><img class="thumbnail" src="' + thumb + '" alt="" />' + bookTitle + '</a></div>'
+								var thehtml = '<div><a href="' + catalogLink + '"><img class="thumbnail" src="' + thumb + '" alt="book jacket for' + bookTitle + '"></a><p>' + bookTitle + '</p></div>'
 						}
 					}
 					$(container).append(thehtml); // Move the HTML above into the #newbooks div
